@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartopia 完全攻略站 | MVP版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff5f5 0%, #e6f7ff 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
+            margin-bottom: 25px;
+            border: 1px solid #ffe4e1;
+        }
+        
+        h1 {
+            color: #e91e63;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 2px solid #ffb6c1;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #e91e63;
+            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.2);
+        }
+        
+        nav {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+        
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .nav-item {
+            list-style: none;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            padding: 8px 18px;
+            background: #fff0f5;
+            color: #e91e63;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid #ffe4e1;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background: #ffe4e1;
+            transform: translateY(-2px);
+        }
+        
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+        
+        .content {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .guide-card {
+            background: #fff9fb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffb6c1;
+        }
+        
+        h2 {
+            color: #e91e63;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #ffe4e1;
+        }
+        
+        h3 {
+            margin: 18px 0 10px;
+            color: #d81b60;
+        }
+        
+        p {
+            margin-bottom: 12px;
+        }
+        
+        .highlight {
+            background: #fff0f5;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .tip-box {
+            background: #e3f2fd;
+            border-left: 4px solid #64b5f6;
+            padding: 12px 15px;
+            border-radius: 0 6px 6px 0;
+            margin: 15px 0;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .quick-links h2 {
+            color: #e91e63;
+            margin-bottom: 15px;
+        }
+        
+        .quick-links ul {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .quick-links li:before {
+            content: "♥";
+            position: absolute;
+            left: 0;
+            color: #e91e63;
+            font-size: 0.9rem;
+        }
+        
+        .quick-links a {
+            color: #d81b60;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        
+        .quick-links a:hover {
+            color: #e91e63;
+            transform: translateX(3px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .version {
+            display: inline-block;
+            background: #ffe4e1;
+            color: #e91e63;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>♥ Heartopia 攻略站</h1>
+        <p class="tagline">专注解决新手卡关问题 · 最新v1.0.2版本适配 · 3分钟找到你需要的攻略</p >
+        
+        <div class="search-box">
+            <input type="text" placeholder="搜索任务名称/角色/物品（例如：莉莉好感度、春季钓鱼）">
+        </div>
+    </header>
+    
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item"><a href=" " class="nav-link active">首页</a ></li>
+            <li class="nav-item"><a href="#" class="nav-link">角色攻略</a ></li>
+            <li class="nav-item"><a href="#" class="nav-link">任务指南</a ></li>
+            <li class="nav-item"><a href="#" class="nav-link">好感度系统</a ></li>
+            <li class="nav-item"><a href="#" class="nav-link">资源收集</a ></li>
+            <li class="nav-item"><a href="#" class="nav-link">常见问题</a ></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="content">
+            <h2>新手必看：核心系统快速入门</h2>
+            
+            <div class="guide-card">
+                <h3>❤ 好感度系统完全指南（MVP重点）</h3>
+                <p><span class="highlight">关键机制</span>：Heartopia中所有角色好感度分为5级（陌生→熟悉→朋友→亲密→挚友），每级需要<span class="highlight">200点好感</span>，通过特定互动累积。</p >
+                
+                <div class="tip-box">
+                    <strong>新手提示：</strong> 第一天优先与<span class="highlight">莉莉</span>对话3次+送她<em>野花</em>，可跳过"陌生"阶段直接进入"熟悉"！
+                </div>
+                
+                <p><span class="highlight">高效提升技巧</span>：</p >
+                <ul>
+                    <li>每天首次赠送<span class="highlight">对应角色喜好物品</span>可获得3倍好感（莉莉喜欢鲜花，汤姆喜欢钓鱼）</li>
+                    <li>周日小镇广场的<span class="highlight">"情感茶会"</span>活动可一次性+50好感</li>
+                    <li>避免连续3天不互动，否则每日-5好感</li>
+                </ul>
+            </div>
+            
+            <div class="guide-card">
+                <h3>🌿 第一天必做事项（新手卡关点）</h3>
+                <p>许多玩家反映第一天结束时无法推进剧情，这是因未完成<span class="highlight">3个核心动作</span>：</p >
+                
+                <ol>
+                    <li><strong>10:00前</strong>在<em>镇长办公室</em>领取初始任务（错过需等待游戏内3天）</li>
+                    <li>与<em>莉莉</em>对话触发<em>"花园危机"</em>事件（需点击3次右侧信箱）</li>
+                    <li>收集<em>5朵野花</em>（地图西北角草地，非东南角）</li>
+                </ol>
+                
+                <div class="tip-box">
+                    <strong>重要提示：</strong> 如果第一天结束时未完成上述事项，游戏将<em>强制进入等待循环</em>，必须重开存档！
+                </div>
+            </div>
+        </div>
+        
+        <aside class="sidebar">
+            <div class="quick-links">
+                <h2>快速导航</h2>
+                <ul>
+                    <li><a href="#">莉莉好感度速升技巧</a ></li>
+                    <li><a href="#">春季钓鱼点位地图</a ></li>
+                    <li><a href="#">隐藏角色"艾拉"解锁条件</a ></li>
+                    <li><a href="#">好感度下降修复方法</a ></li>
+                    <li><a href="#">v1.0.2更新内容详解</a ></li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 25px; padding-top: 15px; border-top: 1px dashed #ffe4e1;">
+                <h3>当前版本</h3>
+                <p>攻略适配：<span class="version">v1.0.2</span></p >
+                <p style="font-size: 0.85rem; color: #666; margin-top: 8px;">最后更新：2026-06-25</p >
+            </div>
+        </aside>
+    </main>
+    
+    <footer>
+        <p>Heartopia 攻略站 MVP版本 © 2026 | 专注解决新手最常卡关的5个核心问题</p >
+        <p class="version">MVP功能范围：好感度系统 · 基础任务流程 · 版本v1.0.2适配</p >
+    </footer>
+</body>
+</html>
